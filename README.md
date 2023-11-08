@@ -1,13 +1,12 @@
-# docx_merge
+# check_docx_tilte
 
-这是一个用于合并多个 Word 文档的 Python 脚本。
+\功能
 
-## 功能
-
-- 合并指定文件夹中的所有 Word 文档
-- 为每个文档提取标题并将其修改为三级标题
-- 将合并后的内容保存到一个新文档中
+- 修改每个文档的第一段话后+第x期（会破坏原有的样式）
+- 合并每个word文档的第一段话和第二段话
+- 输出每个word文档第一段话和第二段话的在/output.txt
 
 ## 用法
 
-1. 安装 `python-docx`库：
+1. 在当前环境下安装 `python-docx`库：pip install python-docx
+2. 在根目录下运行：python check_docx_title.py
