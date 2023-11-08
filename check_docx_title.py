@@ -1,8 +1,18 @@
 import os  
 from docx import Document
 
-#pip install python-docx
+# https://python-docx.readthedocs.io/en/latest/
+# pip install python-docx
+
+
 output_folder = "data/output"
+
+if not os.path.exists(output_folder):  
+    os.makedirs(output_folder)  
+    print(f"Path {output_folder} created.")  
+else:  
+    print(f"Path {output_folder} already exists.")  
+
 document=Document()
 
 # 获取文件列表并排序  
@@ -20,12 +30,8 @@ with open("output.txt", "w") as file:
             first_paragraph = doc.paragraphs[0].text  
             second_paragraph = doc.paragraphs[1].text  
             first_paragraph = f'{first_paragraph} 第（{i+1}）期'  
-            p = document.add_heading('first_paragraph', level=3)
-            p.add_run('bold').bold = True
-            p.add_run(' and some ')
-            p.add_run('italic.').italic = True
             print(filename, first_paragraph, second_paragraph)  
-            # doc.paragraphs[0].text = first_paragraph  
+            doc.paragraphs[0].text = first_paragraph  
             
             output_filename = os.path.join(output_folder, filename)  
             doc.save(output_filename)  
