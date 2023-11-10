@@ -23,9 +23,10 @@ def merge_doc(source_file_path_list, target_file_path):
 
 if __name__ == '__main__':
     print(os.getcwd())
-    source_path = os.getcwd() + '/data/05 产业上中下游价格指数周度报告/产业上中下游价格指数报告_49篇/'
-    
-    target_file = os.getcwd() + '\\\\merge_result.docx'
+    input='/data/05 产业上中下游价格指数周度报告/产业上中下游价格指数报告_49篇/'
+    output='/data/05_merge_result.docx'
+    source_path = os.getcwd() + input
+    target_file = os.getcwd() + output
     source_file_list = os.listdir(source_path)
     source_file_list_all = []
     for file in source_file_list:
